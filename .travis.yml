@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dipsprajapati/mysite -f Dockerfile.dev . 
+
+script:
+  - docke run dipsprajapati/mysite python manage.py test 
+  
